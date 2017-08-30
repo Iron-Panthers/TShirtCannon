@@ -6,11 +6,22 @@ import edu.wpi.first.wpilibj.Victor;
 
 public class Hardware {
 	
-	public static final Talon left = new Talon(0);
-	public static final Talon right = new Talon(1);
+	public Talon left;
+	public Talon right;
 	
-	public static final Victor turret = new Victor(2);
-	public static final Victor cannon = new Victor(3);
+	public Victor turret;
+	public Victor cannon;
 	
-	public static final DoubleSolenoid sol = new DoubleSolenoid(0,1);
+	public DoubleSolenoid sol;
+	
+	public Hardware () {
+		// Construct the things here
+		left = new Talon(RobotMap.DRIVE_LEFT_PORT);
+		right = new Talon(RobotMap.DRIVE_RIGHT_PORT);
+		
+		turret = new Victor(RobotMap.TURRET_TURN_PORT);
+		cannon = new Victor(RobotMap.CANNON_FIRE_PORT);
+		
+		sol = new DoubleSolenoid(RobotMap.SOLENOID_FORWARD, RobotMap.SOLENOID_REVERSE);
+	}
 }
