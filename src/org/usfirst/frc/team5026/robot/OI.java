@@ -1,5 +1,9 @@
 package org.usfirst.frc.team5026.robot;
 
+import org.usfirst.frc.team5026.robot.subsystems.PantherJoystick;
+
+import edu.wpi.first.wpilibj.buttons.Button;
+
 // import org.usfirst.frc.team5026.robot.commands.ExampleCommand;
 
 /**
@@ -7,6 +11,13 @@ package org.usfirst.frc.team5026.robot;
  * interface to the commands and command groups that allow control of the robot.
  */
 public class OI {
+	
+	public PantherJoystick driveStick;
+	public PantherJoystick shootStick;
+	
+	public Button shootButton1;
+	
+	
 	//// CREATING BUTTONS
 	// One type of button is a joystick button which is any button on a
 	//// joystick.
