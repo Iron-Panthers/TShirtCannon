@@ -13,7 +13,6 @@ public class MoveTurret extends Command {
 	private PantherJoystick joystick;
 	
     public MoveTurret() {
-    	requires(Robot.cannon);
     	
     	
         // Use requires() here to declare subsystem dependencies

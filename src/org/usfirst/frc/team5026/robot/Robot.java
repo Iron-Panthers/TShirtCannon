@@ -34,6 +34,7 @@ public class Robot extends IterativeRobot {
 		oi = new OI();
 		cannon = new Cannon();
 		
+		oi.setButtons();
 	}
 
 	/**
