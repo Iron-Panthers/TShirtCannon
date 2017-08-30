@@ -3,6 +3,7 @@ package org.usfirst.frc.team5026.robot;
 import org.usfirst.frc.team5026.robot.subsystems.PantherJoystick;
 
 import edu.wpi.first.wpilibj.buttons.Button;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 // import org.usfirst.frc.team5026.robot.commands.ExampleCommand;
 
@@ -17,6 +18,15 @@ public class OI {
 	
 	public Button shootButton1;
 	
+	public OI() {
+		driveStick = new PantherJoystick(0);
+		shootStick = new PantherJoystick(1);
+		
+	}
+	
+	public void initButtons() {
+		shootButton1 = new JoystickButton(shootStick, 1);
+	}
 	
 	//// CREATING BUTTONS
 	// One type of button is a joystick button which is any button on a
