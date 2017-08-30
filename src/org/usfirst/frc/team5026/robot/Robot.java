@@ -33,6 +33,7 @@ public class Robot extends IterativeRobot {
 	public void robotInit() {
 		oi = new OI();
 		cannon = new Cannon();
+		
 	}
 
 	/**

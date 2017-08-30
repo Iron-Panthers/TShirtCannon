@@ -1,21 +1,27 @@
 package org.usfirst.frc.team5026.robot.subsystems;
 
 import org.usfirst.frc.team5026.robot.Robot;
+import org.usfirst.frc.team5026.robot.commands.MoveTurret;
+
+import com.ctre.CANTalon;
+import com.ctre.CANTalon.TalonControlMode;
 
 import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class Cannon extends Subsystem {
 	Victor turret;
-	Victor cannon;
+	CANTalon cannon;
 
 	public Cannon() {
 		cannon = Robot.hardware.cannon;
 		turret = Robot.hardware.turret;
+		
+		cannon.changeControlMode(TalonControlMode.Voltage);
 	}
 	
-	public void setCannonMotor(double target) {            
-		cannon.set(target);
+	public void pulseCannonMotor(double voltage) {
+		cannon.set(voltage);
 	}
 	
 	public void setTurretMotor(double target) {
@@ -28,8 +34,9 @@ public class Cannon extends Subsystem {
 	}
 	@Override
 	protected void initDefaultCommand() {
+		
 		// MAKE SURE U CAN FIRE WHILE MOVING
 		// TODO Auto-generated method stub
-		
+		setDefaultCommand(new MoveTurret());
 	}
 }
