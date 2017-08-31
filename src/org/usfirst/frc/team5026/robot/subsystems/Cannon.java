@@ -2,7 +2,6 @@ package org.usfirst.frc.team5026.robot.subsystems;
 
 import org.usfirst.frc.team5026.robot.Robot;
 import org.usfirst.frc.team5026.robot.commands.MoveAndFireTurret;
-import org.usfirst.frc.team5026.robot.commands.MoveTurret;
 
 import com.ctre.CANTalon;
 import com.ctre.CANTalon.TalonControlMode;

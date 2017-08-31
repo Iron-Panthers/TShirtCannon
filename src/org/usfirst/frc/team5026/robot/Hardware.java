@@ -24,6 +24,7 @@ public class Hardware {
 		turret = new Victor(RobotMap.TURRET_TURN_PORT);
 		cannon = new CANTalon(RobotMap.CANNON_FIRE_PORT);
 		
+		// Possible issues that could cause Compressor not starting could be D-link position
 		sol = new DoubleSolenoid(RobotMap.SOLENOID_FORWARD, RobotMap.SOLENOID_REVERSE);
 	}
 }
