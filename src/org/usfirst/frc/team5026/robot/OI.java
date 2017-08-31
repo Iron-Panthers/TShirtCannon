@@ -1,5 +1,6 @@
 package org.usfirst.frc.team5026.robot;
 
+import org.usfirst.frc.team5026.robot.commands.MoveAndFireTurret;
 import org.usfirst.frc.team5026.robot.subsystems.PantherJoystick;
 
 import edu.wpi.first.wpilibj.buttons.Button;
@@ -30,6 +31,6 @@ public class OI {
 	}
 	
 	public void mapButtons() {
-		//shootButton1.whenPressed(new ShootCannon());
+//		shootButton1.whenPressed(new MoveAndFireTurret());
 	}
 }

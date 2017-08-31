@@ -24,18 +24,26 @@ public class MoveAndFireTurret extends Command {
     	cannon = Robot.cannon;
     	cannon.stopMotors();
     	joystick = Robot.oi.shootStick;
+//    	cannon.cannon.enable();
+//    	cannon.pulseCannonMotor(Constants.CANNON_OUTPUT_VOLTAGE);
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	cannon.setTurretMotor(-joystick.getScaledDeadzoneX() * Constants.SPEED_TURRET_SCALING);
+    	
     	// HOLD JOYSTICK DOWN TO FIRE SHIRT (RELEASE AFTERWARDS TO GIVE REPRESSURE TIME)
     	if (joystick.getRawButton(RobotMap.SHOOT_BUTTON)) {
     		System.out.println("Firing at "+Constants.CANNON_OUTPUT_VOLTAGE+" volts!");
-        	Robot.cannon.pulseCannonMotor(Constants.CANNON_OUTPUT_VOLTAGE);
+    		cannon.cannon.enable();
+        	cannon.pulseCannonMotor(Constants.CANNON_OUTPUT_VOLTAGE);
+        	
     	} else {
-    		Robot.cannon.pulseCannonMotor(0);
+    		cannon.cannon.disable();
+//    		cannon.pulseCannonMotor(0);
     	}
+    	
+//    	Robot.cannon.pulseCannonMotor(Constants.CANNON_OUTPUT_VOLTAGE);
     }
 
     // Make this return true when this Command no longer needs to run execute()

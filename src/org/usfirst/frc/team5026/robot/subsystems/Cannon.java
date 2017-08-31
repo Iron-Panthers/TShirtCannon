@@ -11,7 +11,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class Cannon extends Subsystem {
 	Victor turret;
-	CANTalon cannon;
+	public CANTalon cannon;
 
 	public Cannon() {
 		cannon = Robot.hardware.cannon;
