@@ -1,6 +1,5 @@
 package org.usfirst.frc.team5026.robot;
 
-import org.usfirst.frc.team5026.robot.commands.ShootCannon;
 import org.usfirst.frc.team5026.robot.subsystems.PantherJoystick;
 
 import edu.wpi.first.wpilibj.buttons.Button;
@@ -30,7 +29,7 @@ public class OI {
 		shootButton1 = new JoystickButton(shootStick, RobotMap.SHOOT_BUTTON);
 	}
 	
-	public void setButtons() {
-		shootButton1.whenPressed(new ShootCannon());
+	public void mapButtons() {
+		//shootButton1.whenPressed(new ShootCannon());
 	}
 }

@@ -2,14 +2,12 @@
 package org.usfirst.frc.team5026.robot;
 
 import org.usfirst.frc.team5026.robot.subsystems.Cannon;
+import org.usfirst.frc.team5026.robot.subsystems.Drive;
 import org.usfirst.frc.team5026.robot.subsystems.PantherJoystick;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
-import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
-import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -24,6 +22,7 @@ public class Robot extends IterativeRobot {
 	public static Hardware hardware;
 	public static PantherJoystick joystick;
 	public static Cannon cannon;
+	public static Drive drive;
 
 	/**
 	 * This function is run when the robot is first started up and should be
@@ -33,8 +32,8 @@ public class Robot extends IterativeRobot {
 	public void robotInit() {
 		oi = new OI();
 		cannon = new Cannon();
-		
-		oi.setButtons();
+		drive = new Drive();
+		oi.mapButtons();
 	}
 
 	/**

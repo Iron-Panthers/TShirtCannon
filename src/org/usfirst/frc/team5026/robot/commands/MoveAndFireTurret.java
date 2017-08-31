@@ -1,6 +1,9 @@
 package org.usfirst.frc.team5026.robot.commands;
 
+import org.usfirst.frc.team5026.robot.Constants;
 import org.usfirst.frc.team5026.robot.Robot;
+import org.usfirst.frc.team5026.robot.RobotMap;
+import org.usfirst.frc.team5026.robot.subsystems.Cannon;
 import org.usfirst.frc.team5026.robot.subsystems.PantherJoystick;
 
 import edu.wpi.first.wpilibj.command.Command;
@@ -8,26 +11,31 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class MoveTurret extends Command {
+public class MoveAndFireTurret extends Command {
+	Cannon cannon;
+	PantherJoystick joystick;
+	ShootCannon command;
 
-	private PantherJoystick joystick;
-	
-    public MoveTurret() {
-    	
-    	
-        // Use requires() here to declare subsystem dependencies
-        // eg. requires(chassis);
-    	joystick = Robot.oi.shootStick;
+    public MoveAndFireTurret() {
+        requires(Robot.cannon);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	Robot.cannon.stopMotors();
+    	cannon = Robot.cannon;
+    	cannon.stopMotors();
+    	joystick = Robot.oi.shootStick;
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.cannon.setTurretMotor(joystick.getScaledDeadzoneX() * 0.5);
+    	cannon.setTurretMotor(joystick.getScaledDeadzoneX() * Constants.SPEED_TURRET_SCALING);
+    	
+    	if (joystick.getRawButton(RobotMap.SHOOT_BUTTON)) {
+        	Robot.cannon.pulseCannonMotor(Constants.CANNON_OUTPUT_VOLTAGE);
+    	} else {
+    		Robot.cannon.pulseCannonMotor(0);
+    	}
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -35,7 +43,7 @@ public class MoveTurret extends Command {
         return false;
     }
 
-    // Called once after isFinished returns true
+ // Called once after isFinished returns true
     protected void end() {
     	Robot.cannon.stopMotors();
     }
