@@ -7,6 +7,7 @@ import org.usfirst.frc.team5026.robot.subsystems.PantherJoystick;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
+import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
 /**
@@ -31,6 +32,8 @@ public class Robot extends IterativeRobot {
 	@Override
 	public void robotInit() {
 		oi = new OI();
+		hardware = new Hardware();
+	
 		cannon = new Cannon();
 		drive = new Drive();
 		oi.mapButtons();
