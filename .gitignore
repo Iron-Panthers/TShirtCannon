@@ -4,3 +4,6 @@
 .project
 *.properties
 /bin/
+
+build/
+dist/
