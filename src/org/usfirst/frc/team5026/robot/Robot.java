@@ -31,6 +31,7 @@ public class Robot extends IterativeRobot {
 	@Override
 	public void robotInit() {
 		oi = new OI();
+		hardware = new Hardware();
 		cannon = new Cannon();
 		drive = new Drive();
 		oi.mapButtons();
