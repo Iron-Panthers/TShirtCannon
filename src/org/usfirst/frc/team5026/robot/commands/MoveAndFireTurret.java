@@ -28,7 +28,7 @@ public class MoveAndFireTurret extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	cannon.setTurretMotor(joystick.getScaledDeadzoneX() * Constants.SPEED_TURRET_SCALING);
+    	cannon.setTurretMotor(-joystick.getScaledDeadzoneX() * Constants.SPEED_TURRET_SCALING);
     	// HOLD JOYSTICK DOWN TO FIRE SHIRT (RELEASE AFTERWARDS TO GIVE REPRESSURE TIME)
     	if (joystick.getRawButton(RobotMap.SHOOT_BUTTON)) {
     		System.out.println("Firing at "+Constants.CANNON_OUTPUT_VOLTAGE+" volts!");

@@ -1,6 +1,7 @@
 package org.usfirst.frc.team5026.robot.subsystems;
 
 import org.usfirst.frc.team5026.robot.Robot;
+import org.usfirst.frc.team5026.robot.commands.JoystickDrive;
 
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.Talon;
@@ -16,6 +17,7 @@ public class Drive extends Subsystem {
 		left = Robot.hardware.left;
 		right = Robot.hardware.right;
 		drive = new RobotDrive(left, right);
+		drive.setSafetyEnabled(false);
 	}
 	public void drive(double left, double right) {
 		drive.setLeftRightMotorOutputs(left, right);
@@ -30,7 +32,7 @@ public class Drive extends Subsystem {
 	@Override
 	protected void initDefaultCommand() {
 		// TODO Auto-generated method stub
-		
+		setDefaultCommand(new JoystickDrive());
 	}
 	
 	

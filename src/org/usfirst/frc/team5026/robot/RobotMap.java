@@ -16,7 +16,7 @@ public class RobotMap {
 	public static final int DRIVE_LEFT_PORT = 0;
 	public static final int DRIVE_RIGHT_PORT = 1;
 	public static final int TURRET_TURN_PORT = 2;
-	public static final int CANNON_FIRE_PORT = 6;
+	public static final int CANNON_FIRE_PORT = 1;
 	// SOLENOID
 	public static final int SOLENOID_FORWARD = 0;
 	public static final int SOLENOID_REVERSE = 1;

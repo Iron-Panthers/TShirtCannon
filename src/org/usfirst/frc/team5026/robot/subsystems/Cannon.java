@@ -34,9 +34,6 @@ public class Cannon extends Subsystem {
 	}
 	@Override
 	protected void initDefaultCommand() {
-		
-		// MAKE SURE U CAN FIRE WHILE MOVING
-		// TODO Auto-generated method stub
 		setDefaultCommand(new MoveAndFireTurret());
 	}
 }
