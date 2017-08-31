@@ -14,7 +14,6 @@ import edu.wpi.first.wpilibj.command.Command;
 public class MoveAndFireTurret extends Command {
 	Cannon cannon;
 	PantherJoystick joystick;
-	ShootCannon command;
 
     public MoveAndFireTurret() {
         requires(Robot.cannon);
@@ -29,9 +28,10 @@ public class MoveAndFireTurret extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	cannon.setTurretMotor(joystick.getScaledDeadzoneX() * Constants.SPEED_TURRET_SCALING);
-    	
+    	cannon.setTurretMotor(-joystick.getScaledDeadzoneX() * Constants.SPEED_TURRET_SCALING);
+    	// HOLD JOYSTICK DOWN TO FIRE SHIRT (RELEASE AFTERWARDS TO GIVE REPRESSURE TIME)
     	if (joystick.getRawButton(RobotMap.SHOOT_BUTTON)) {
+    		System.out.println("Firing at "+Constants.CANNON_OUTPUT_VOLTAGE+" volts!");
         	Robot.cannon.pulseCannonMotor(Constants.CANNON_OUTPUT_VOLTAGE);
     	} else {
     		Robot.cannon.pulseCannonMotor(0);
@@ -46,7 +46,7 @@ public class MoveAndFireTurret extends Command {
  // Called once after isFinished returns true
     protected void end() {
     	Robot.cannon.stopMotors();
-    }
+    }	
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
