@@ -8,17 +8,14 @@ import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class Drive extends Subsystem {
-
-	Talon left;
-	Talon right;
+	
 	RobotDrive drive;
 	
 	public Drive() {
-		left = Robot.hardware.left;
-		right = Robot.hardware.right;
-		drive = new RobotDrive(left, right);
+		drive = new RobotDrive(Robot.hardware.leftMotorGroup, Robot.hardware.rightMotorGroup);
 		drive.setSafetyEnabled(false);
 	}
+	
 	public void drive(double left, double right) {
 		drive.setLeftRightMotorOutputs(left, right);
 	}

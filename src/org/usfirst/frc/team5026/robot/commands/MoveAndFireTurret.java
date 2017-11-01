@@ -4,7 +4,7 @@ import org.usfirst.frc.team5026.robot.Constants;
 import org.usfirst.frc.team5026.robot.Robot;
 import org.usfirst.frc.team5026.robot.RobotMap;
 import org.usfirst.frc.team5026.robot.subsystems.Cannon;
-import org.usfirst.frc.team5026.robot.subsystems.PantherJoystick;
+import org.usfirst.frc.team5026.robot.util.PantherJoystick;
 
 import edu.wpi.first.wpilibj.command.Command;
 

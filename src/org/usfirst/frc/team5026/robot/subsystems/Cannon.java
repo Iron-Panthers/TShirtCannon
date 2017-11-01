@@ -6,11 +6,10 @@ import org.usfirst.frc.team5026.robot.commands.MoveAndFireTurret;
 import com.ctre.CANTalon;
 import com.ctre.CANTalon.TalonControlMode;
 
-import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class Cannon extends Subsystem {
-	Victor turret;
+	CANTalon turret;
 	CANTalon cannon;
 
 	public Cannon() {

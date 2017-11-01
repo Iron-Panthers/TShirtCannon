@@ -1,7 +1,7 @@
 package org.usfirst.frc.team5026.robot.commands;
 
 import org.usfirst.frc.team5026.robot.Robot;
-import org.usfirst.frc.team5026.robot.subsystems.PantherJoystick;
+import org.usfirst.frc.team5026.robot.util.PantherJoystick;
 
 import edu.wpi.first.wpilibj.command.Command;
 

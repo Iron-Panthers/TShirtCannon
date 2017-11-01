@@ -1,6 +1,6 @@
 package org.usfirst.frc.team5026.robot;
 
-import org.usfirst.frc.team5026.robot.subsystems.PantherJoystick;
+import org.usfirst.frc.team5026.robot.util.PantherJoystick;
 
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
