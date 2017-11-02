@@ -23,7 +23,7 @@ public class Hardware {
 	public CANTalon cannon;
 	
 	public Compressor compressor;
-	public DoubleSolenoid sol;
+//	public DoubleSolenoid sol;
 	
 	public LEDDisplay led;
 	
@@ -43,7 +43,7 @@ public class Hardware {
 		// Possible issues that could cause Compressor not starting could be D-link position
 		compressor = new Compressor(1);
 		compressor.start();
-		sol = new DoubleSolenoid(RobotMap.SOLENOID_FORWARD, RobotMap.SOLENOID_REVERSE);
+//		sol = new DoubleSolenoid(RobotMap.SOLENOID_FORWARD, RobotMap.SOLENOID_REVERSE);
 		
 		led = new LEDDisplay(RobotMap.LED);
 	}
