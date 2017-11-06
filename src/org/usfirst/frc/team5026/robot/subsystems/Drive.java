@@ -12,7 +12,7 @@ public class Drive extends Subsystem {
 	RobotDrive drive;
 	
 	public Drive() {
-		drive = new RobotDrive(Robot.hardware.leftMotorGroup, Robot.hardware.rightMotorGroup);
+		drive = new RobotDrive(Robot.hardware.left, Robot.hardware.right);
 		drive.setSafetyEnabled(false);
 	}
 	

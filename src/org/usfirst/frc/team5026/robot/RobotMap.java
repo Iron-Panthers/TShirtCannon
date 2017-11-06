@@ -16,14 +16,12 @@ public class RobotMap {
 	
 	// DRIVE PORTS
 	// Talons
-	public static final int DRIVE_LEFT_PORT_1 = 0;
-	public static final int DRIVE_LEFT_PORT_2 = 1;
-	public static final int DRIVE_RIGHT_PORT_1 = 2;
-	public static final int DRIVE_RIGHT_PORT_2 = 3;
+	public static final int DRIVE_LEFT_PORT = 0;
+	public static final int DRIVE_RIGHT_PORT = 1;
 	
 	// Talon SRXs
-	public static final int TURRET_TURN_PORT = 2;
-	public static final int CANNON_FIRE_PORT = 1;
+	public static final int TURRET_TURN_PORT = 4;
+	public static final int CANNON_FIRE_PORT = 7;
 	
 	// SOLENOID
 	public static final int SOLENOID_FORWARD = 0;

@@ -12,7 +12,7 @@ public class LEDDisplay extends CANLight {
 	{
 		super(port);
 		
-		cycleAll();
+		//cycleAll();
 	}
 	
 	public void cycleAll()

@@ -5,7 +5,7 @@ import org.usfirst.frc.team5026.robot.util.Color;
 public class Constants {
 	//Cannon Constants
 	public static final double CANNON_OUTPUT_VOLTAGE = 9.0;
-	public static final double SPEED_TURRET_SCALING = 0.5;
+	public static final double SPEED_TURRET_SCALING = 0.7;
 	
 	//LED Constants
 	public static final double LED_TIME_DEFAULT = 0.25;

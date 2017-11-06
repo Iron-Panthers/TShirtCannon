@@ -11,13 +11,11 @@ import edu.wpi.first.wpilibj.Talon;
 
 public class Hardware {
 	
-	public Talon left1;
-	public Talon left2;
-	public Talon right1;
-	public Talon right2;
+	public Talon left;
+	public Talon right;
 	
-	public MotorGroup leftMotorGroup;
-	public MotorGroup rightMotorGroup;
+	//public MotorGroup leftMotorGroup;
+	//public MotorGroup rightMotorGroup;
 	
 	public CANTalon turret;
 	public CANTalon cannon;
@@ -29,13 +27,11 @@ public class Hardware {
 	
 	public Hardware () {
 		// Construct the things here
-		left1 = new Talon(RobotMap.DRIVE_LEFT_PORT_1);
-		left2 = new Talon(RobotMap.DRIVE_LEFT_PORT_2);
-		right1 = new Talon(RobotMap.DRIVE_RIGHT_PORT_1);
-		right2 = new Talon(RobotMap.DRIVE_RIGHT_PORT_2);
+		left = new Talon(RobotMap.DRIVE_LEFT_PORT);
+		right = new Talon(RobotMap.DRIVE_RIGHT_PORT);
 		
-		leftMotorGroup = new MotorGroup(left1, left2);
-		rightMotorGroup = new MotorGroup(right1, right2);
+		//leftMotorGroup = new MotorGroup(left1, left2);
+		//rightMotorGroup = new MotorGroup(right1, right2);
 		
 		turret = new CANTalon(RobotMap.TURRET_TURN_PORT);
 		cannon = new CANTalon(RobotMap.CANNON_FIRE_PORT);
