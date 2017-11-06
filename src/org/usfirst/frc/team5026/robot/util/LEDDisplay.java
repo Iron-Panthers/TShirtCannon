@@ -12,14 +12,15 @@ public class LEDDisplay extends CANLight {
 	{
 		super(port);
 		
-		//cycleAll();
+//		cycleAll(); // Unnecessary, now takes place within LEDController Command.
 	}
 	
 	public void cycleAll()
 	{
 		reset();
 		writeRegister(Constants.LED_TIME_DEFAULT, register);
-		cycle(Color.RED, Color.GOLD, Color.YELLOW, Color.GREEN, Color.BLUE, Color.ELECTRIC_INDIGO);
+		// These colors will cycle at LED_TIME_DEFAULT:
+		cycle(Constants.LED_CYCLE);
 	}
 	public void cycle(ColorTime... ct)
 	{

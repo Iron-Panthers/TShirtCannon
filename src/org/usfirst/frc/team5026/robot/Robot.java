@@ -1,6 +1,7 @@
 
 package org.usfirst.frc.team5026.robot;
 
+import org.usfirst.frc.team5026.robot.commands.LEDController;
 import org.usfirst.frc.team5026.robot.subsystems.Cannon;
 import org.usfirst.frc.team5026.robot.subsystems.Drive;
 import org.usfirst.frc.team5026.robot.util.PantherJoystick;
@@ -63,6 +64,7 @@ public class Robot extends IterativeRobot {
 
 	@Override
 	public void teleopInit() {
+		new LEDController().start(); // Makes and starts the LEDController Command, never needed again
 	}
 
 	@Override

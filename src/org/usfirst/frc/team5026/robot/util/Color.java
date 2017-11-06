@@ -1,5 +1,6 @@
 package org.usfirst.frc.team5026.robot.util;
 
+// It is Color not Colour @tried
 public enum Color {
 	RED(255, 0, 0),
 	GREEN(0, 255, 0),
