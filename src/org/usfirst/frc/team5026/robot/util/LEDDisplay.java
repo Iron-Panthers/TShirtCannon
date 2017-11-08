@@ -11,8 +11,9 @@ public class LEDDisplay extends CANLight {
 	public LEDDisplay(int port)
 	{
 		super(port);
-		
-//		cycleAll(); // Unnecessary, now takes place within LEDController Command.
+		register = Constants.LED_CYCLE;
+
+		cycleAll(); // Unnecessary, now takes place within LEDController Command.
 	}
 	
 	public void cycleAll()
