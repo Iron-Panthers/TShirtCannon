@@ -4,6 +4,7 @@ import org.usfirst.frc.team5026.robot.Constants;
 import org.usfirst.frc.team5026.robot.Robot;
 import org.usfirst.frc.team5026.robot.RobotMap;
 import org.usfirst.frc.team5026.robot.subsystems.Cannon;
+import org.usfirst.frc.team5026.robot.util.CannonState;
 import org.usfirst.frc.team5026.robot.util.PantherJoystick;
 
 import edu.wpi.first.wpilibj.command.Command;
@@ -35,6 +36,7 @@ public class MoveAndFireTurret extends Command {
         	Robot.cannon.pulseCannonMotor(Constants.CANNON_OUTPUT_VOLTAGE);
     	} else {
     		Robot.cannon.pulseCannonMotor(0);
+    		Robot.cannon.state = CannonState.MOVING; // redundant lighting
     	}
     }
 

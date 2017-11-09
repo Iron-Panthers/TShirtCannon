@@ -19,7 +19,7 @@ public class LEDDisplay extends CANLight {
 	public void cycleAll()
 	{
 		reset();
-		writeRegister(Constants.LED_TIME_DEFAULT, register);
+//		writeRegister(Constants.LED_TIME_DEFAULT, register);
 		// These colors will cycle at LED_TIME_DEFAULT:
 		cycle(Constants.LED_CYCLE);
 	}
