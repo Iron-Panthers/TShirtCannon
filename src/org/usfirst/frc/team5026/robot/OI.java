@@ -7,6 +7,11 @@ package org.usfirst.frc.team5026.robot;
  * interface to the commands and command groups that allow control of the robot.
  */
 public class OI {
+	
+	public OI() {
+		
+	}
+	
 	//// CREATING BUTTONS
 	// One type of button is a joystick button which is any button on a
 	//// joystick.
