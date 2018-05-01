@@ -1,6 +1,10 @@
 package org.usfirst.frc.team5026.robot;
 
+import org.usfirst.frc.team5026.robot.commands.ShootFromCannon;
 import org.usfirst.frc.team5026.util.GoodJoystick;
+
+import edu.wpi.first.wpilibj.buttons.Button;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 // import org.usfirst.frc.team5026.robot.commands.ExampleCommand;
 
@@ -10,12 +14,14 @@ import org.usfirst.frc.team5026.util.GoodJoystick;
  */
 public class OI {
 	public GoodJoystick driveStick;
+	public Button shoot;
 	public OI() {
 		driveStick = new GoodJoystick(RobotMap.DRIVE_JOYSTICK);
+		shoot = new JoystickButton(driveStick.driveStick, 2);
 	}
 	
 	public void mapButtons() {
-		
+		shoot.whenPressed(new ShootFromCannon());
 	}
 	//// CREATING BUTTONS
 	// One type of button is a joystick button which is any button on a
