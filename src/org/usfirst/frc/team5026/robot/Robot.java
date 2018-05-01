@@ -21,6 +21,7 @@ public class Robot extends IterativeRobot {
 
 	public static OI oi;
 	public static Cannon cannon;
+	public static Hardware h;
 
 	Command autonomousCommand;
 	SendableChooser<Command> chooser = new SendableChooser<>();
@@ -31,6 +32,7 @@ public class Robot extends IterativeRobot {
 	 */
 	@Override
 	public void robotInit() {
+		h = new Hardware();
 		cannon = new Cannon();
 		oi = new OI();
 		// chooser.addObject("My Auto", new MyAutoCommand());
