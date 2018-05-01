@@ -1,5 +1,7 @@
 package org.usfirst.frc.team5026.robot;
 
+import org.usfirst.frc.team5026.util.GoodJoystick;
+
 // import org.usfirst.frc.team5026.robot.commands.ExampleCommand;
 
 /**
@@ -7,6 +9,14 @@ package org.usfirst.frc.team5026.robot;
  * interface to the commands and command groups that allow control of the robot.
  */
 public class OI {
+	public GoodJoystick driveStick;
+	public OI() {
+		driveStick = new GoodJoystick(RobotMap.DRIVE_JOYSTICK);
+	}
+	
+	public void mapButtons() {
+		
+	}
 	//// CREATING BUTTONS
 	// One type of button is a joystick button which is any button on a
 	//// joystick.

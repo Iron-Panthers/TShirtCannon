@@ -7,6 +7,8 @@ package org.usfirst.frc.team5026.robot;
  * floating around.
  */
 public class RobotMap {
+
+	public static final int DRIVE_JOYSTICK = 0;
 	// For example to map the left and right motors, you could define the
 	// following variables to use with your drivetrain subsystem.
 	// public static int leftMotor = 1;

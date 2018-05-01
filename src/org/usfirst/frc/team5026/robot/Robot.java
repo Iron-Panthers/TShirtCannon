@@ -1,8 +1,6 @@
 
 package org.usfirst.frc.team5026.robot;
 
-import org.usfirst.frc.team5026.robot.subsystems.Cannon;
-import org.usfirst.frc.team5026.robot.subsystems.PantherJoystick;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
@@ -22,8 +20,6 @@ public class Robot extends IterativeRobot {
 
 	public static OI oi;
 	public static Hardware hardware;
-	public static PantherJoystick joystick;
-	public static Cannon cannon;
 
 	Command autonomousCommand;
 	SendableChooser<Command> chooser = new SendableChooser<>();
