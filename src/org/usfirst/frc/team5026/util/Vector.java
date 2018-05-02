@@ -2,9 +2,12 @@ package org.usfirst.frc.team5026.util;
 
 public class Vector {
 	
+	/** x coordinate of the vector */
 	private double x;
+	/** y coordinate of the vector */
 	private double y;
-	private double magnitude; // The magnitude of the vector
+	/** The magnitude of the vector */
+	private double magnitude; 
 	
 	/**
 	 * Constructs a 2D vector

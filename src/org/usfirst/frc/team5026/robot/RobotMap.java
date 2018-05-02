@@ -8,7 +8,7 @@ package org.usfirst.frc.team5026.robot;
  */
 public class RobotMap {
 
-	public static final int DRIVE_JOYSTICK = 0;
+	
 	// For example to map the left and right motors, you could define the
 	// following variables to use with your drivetrain subsystem.
 	// public static int leftMotor = 1;
@@ -19,5 +19,10 @@ public class RobotMap {
 	// public static int rangefinderPort = 1;
 	// public static int rangefinderModule = 1;
 	
+	/** Port for the joystick */
+	public static final int DRIVE_JOYSTICK = 0;
+	/** Button for shooting */
+	public static final int SHOOT_BUTTON = 2;
+	/** Device ID for the cannon TalonSRX */
 	public static final int CANNON = 9;
 }

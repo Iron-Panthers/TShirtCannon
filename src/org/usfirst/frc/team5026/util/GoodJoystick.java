@@ -1,24 +1,35 @@
 package org.usfirst.frc.team5026.util;
 import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
-public class GoodJoystick {
-	public Joystick driveStick;
-	public JoystickButton driveStickTrigger; 
-	public GoodJoystick(int port){
-		driveStick = new Joystick(port);
-		driveStickTrigger = new JoystickButton(driveStick, 1);
+// Because a GoodJoystick is a Joystick, not a GoodJoystick has a Joystick
+public class GoodJoystick extends Joystick {
+	
+	/**
+	 * Constructs a good joystick.
+	 * 
+	 * @param port - port that joystick is plugged into
+	 */
+	public GoodJoystick(int port) {
+		super(port);
 	}
+	
+	/**
+	 * Displays raw joystick values.
+	 */
 	public void seeAxis() {
-		SmartDashboard.putNumber("Raw X", driveStick.getX());
-		SmartDashboard.putNumber("Raw Y", driveStick.getY());
+		SmartDashboard.putNumber("Raw X", super.getX());
+		SmartDashboard.putNumber("Raw Y", super.getY());
 	}
-	//Robot.drive.useArcadeDrive(Robot.oi.driveStick.getX()*Constants.X_AXIS_MODIFIER, Robot.oi.driveStick.getY());
 
+	/**
+	 * Creates and returns a vector with the x and y position of the joystick.
+	 * 
+	 * @return x and y position of the joystick
+	 */
 	public Vector findXY() {
 		// Reverses drive when triggered
-		Vector v = driveStickTrigger.get() ? new Vector(driveStick.getX(), driveStick.getY()) : new Vector(driveStick.getX(), -driveStick.getY());
+		Vector v = super.getRawButton(1) ? new Vector(super.getX(), super.getY()) : new Vector(super.getX(), -super.getY());
 		double magnitude = v.getMagnitude();
 		double scaledMagnitude = (magnitude-Constants.CIRCLE_DEADZONE)/(1-Constants.CIRCLE_DEADZONE);
 		v.norm();
@@ -27,7 +38,6 @@ public class GoodJoystick {
 		//TODO
 		v.mult(1.05);
 					
-		//if(Math.abs(y) < Constants.YDEADZONE_SIZE*Math.abs(driveStick.getX()) || magnitude < Constants.CIRCLE_DEADZONE) {
 		if ( magnitude < Constants.CIRCLE_DEADZONE ) {
 			v.zero();
 		}
@@ -36,16 +46,28 @@ public class GoodJoystick {
 		SmartDashboard.putNumber("deadzone corrected Y", v.getY());
 		return v;
 	}
-
-	//k = Robot.oi.driveStick.getY()/Robot.oi.driveStick.getX();
-	public double findRightPower(double x,double y) {
-			return y-x;
-	}
+	
+	/**
+	 * Calculate left power.
+	 * 
+	 * @param x
+	 * @param y
+	 * @return left power
+	 */
 	public double findLeftPower(double x,double y) {
 	        return y+x;
 	}
-	//Robot.drive.setLeftMotor(Robot.oi.driveStick.getY() + Robot.oi.driveStick.getX());
-	//Robot.drive.setRightMotor(Robot.oi.driveStick.getY() - Robot.oi.driveStick.getX());
+
+	/**
+	 * Calculate right power.
+	 * 
+	 * @param x
+	 * @param y
+	 * @return right power
+	 */
+	public double findRightPower(double x,double y) {
+			return y-x;
+	}
 }
 
 
