@@ -1,7 +1,5 @@
 package org.usfirst.frc.team5026.util;
 
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-
 public class Constants {
 	public static final double X_AXIS_MODIFIER = .8;//lower for more sensitive turning
 	public static final double XDEADZONE_SIZE = 0.15;

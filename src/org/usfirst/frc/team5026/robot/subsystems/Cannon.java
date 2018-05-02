@@ -1,6 +1,6 @@
 package org.usfirst.frc.team5026.robot.subsystems;
 
-import org.usfirst.frc.team5026.robot.Hardware;
+import org.usfirst.frc.team5026.robot.Robot;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
@@ -12,7 +12,7 @@ public class Cannon extends Subsystem {
 	private TalonSRX cannon;
 	
 	public Cannon() {
-		cannon = Hardware.cannon;
+		cannon = Robot.h.cannon;
 	}
 	
 	public void shoot(double voltage) {

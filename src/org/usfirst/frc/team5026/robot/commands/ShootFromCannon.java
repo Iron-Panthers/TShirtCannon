@@ -1,6 +1,5 @@
 package org.usfirst.frc.team5026.robot.commands;
 
-import org.usfirst.frc.team5026.robot.Hardware;
 import org.usfirst.frc.team5026.robot.Robot;
 import org.usfirst.frc.team5026.util.Constants;
 
@@ -18,7 +17,7 @@ public class ShootFromCannon extends Command {
 	}
 	
 	protected void execute() {
-		Robot.cannon.shoot(Constants.CANNON_VOLTAGE / Hardware.pdp.getVoltage()); 
+		Robot.cannon.shoot(Constants.CANNON_VOLTAGE / Robot.h.pdp.getVoltage()); 
 	}
 	
 	

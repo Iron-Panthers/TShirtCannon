@@ -8,12 +8,18 @@ import edu.wpi.first.wpilibj.Talon;
 
 public class Hardware {
 	
-	public static final Talon left = new Talon(0);
-	public static final Talon right = new Talon(1);
+	public Talon left = new Talon(0);
+	public Talon right = new Talon(1);
 	
-	public static final TalonSRX cannon = new TalonSRX(RobotMap.CANNON);
+	public TalonSRX cannon;
 	
-	public static final PowerDistributionPanel pdp = new PowerDistributionPanel();
+	public PowerDistributionPanel pdp;
 	
-	public static final DoubleSolenoid sol = new DoubleSolenoid(0,1);
+	public DoubleSolenoid sol;
+	
+	public Hardware() {
+		cannon = new TalonSRX(RobotMap.CANNON);
+		pdp = new PowerDistributionPanel();
+		sol = new DoubleSolenoid(0,1);
+	}
 }
