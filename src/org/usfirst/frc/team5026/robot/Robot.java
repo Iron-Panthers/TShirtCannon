@@ -2,11 +2,11 @@
 package org.usfirst.frc.team5026.robot;
 
 import org.usfirst.frc.team5026.robot.subsystems.Cannon;
+import org.usfirst.frc.team5026.robot.subsystems.Drive;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
-import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
@@ -20,8 +20,13 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class Robot extends IterativeRobot {
 
 	public static OI oi;
+	/** The cannon subsystem */
 	public static Cannon cannon;
-	public static Hardware h;
+	/** The drive subsystem */
+	public static Drive drive;
+	// TODO: Actually make driving
+	/** Hardware used on the t-shirt cannon */
+	public static Hardware hardware;
 
 	Command autonomousCommand;
 	SendableChooser<Command> chooser = new SendableChooser<>();
@@ -32,7 +37,7 @@ public class Robot extends IterativeRobot {
 	 */
 	@Override
 	public void robotInit() {
-		h = new Hardware();
+		hardware = new Hardware();
 		cannon = new Cannon();
 		oi = new OI();
 		oi.mapButtons();
