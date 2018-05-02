@@ -35,6 +35,7 @@ public class Robot extends IterativeRobot {
 		h = new Hardware();
 		cannon = new Cannon();
 		oi = new OI();
+		oi.mapButtons();
 		// chooser.addObject("My Auto", new MyAutoCommand());
 		SmartDashboard.putData("Auto mode", chooser);
 	}
@@ -112,6 +113,5 @@ public class Robot extends IterativeRobot {
 	 */
 	@Override
 	public void testPeriodic() {
-		LiveWindow.run();
 	}
 }
