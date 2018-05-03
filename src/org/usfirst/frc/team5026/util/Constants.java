@@ -3,7 +3,7 @@ package org.usfirst.frc.team5026.util;
 public class Constants {
 	
 	/** Joystick deadzone */
-	public static final double CIRCLE_DEADZONE = 0.1;
+	public static final double CIRCLE_DEADZONE = 0.02;
 	
 	/** Voltage for the cannon */
 	public static final double CANNON_VOLTAGE = 9.0;
@@ -12,7 +12,8 @@ public class Constants {
 	public static final int kSlotIdx = 0; // Do not change
 	public static final int kPIDLoopIdx = 0; // Do not change
 	
-	
+	/** Time in seconds it takes for cannon to shoot */
+	public static final double CANNON_LAUNCH_TIME = 0.1;
 	// Drive constants
 	/** P constant for driving */
 	public static final double DRIVE_P = 0;

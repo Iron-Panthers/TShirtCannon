@@ -26,7 +26,7 @@ public class Cannon extends Subsystem {
 	 * @param voltage
 	 */
 	public void shoot(double voltage) {
-		cannon.set(ControlMode.PercentOutput, voltage / Robot.hardware.pdp.getVoltage());
+		cannon.set(ControlMode.PercentOutput, voltage/12.0);
 	}
 	
 	/**
@@ -38,7 +38,7 @@ public class Cannon extends Subsystem {
 	
 	@Override
 	protected void initDefaultCommand() {
-		setDefaultCommand(new ShootFromCannon());
+//		setDefaultCommand(new ShootFromCannon());
 	}
 
 }

@@ -3,14 +3,15 @@ package org.usfirst.frc.team5026.robot.commands;
 import org.usfirst.frc.team5026.robot.Robot;
 import org.usfirst.frc.team5026.util.Constants;
 
-import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.command.TimedCommand;
 
-public class ShootFromCannon extends Command {
+public class ShootFromCannon extends TimedCommand {
 
 	/**
 	 * Allows to shoot t-shirts from a cannon. 
 	 */
 	public ShootFromCannon() {
+		super(Constants.CANNON_LAUNCH_TIME);
 		requires(Robot.cannon);
 	}
 	
@@ -21,17 +22,13 @@ public class ShootFromCannon extends Command {
 	
     // Called repeatedly when this Command is scheduled to run
 	protected void execute() {
+		System.out.println("Launched!");
 		Robot.cannon.shoot(Constants.CANNON_VOLTAGE); 
-	}
-	
-	// Make this return true when this Command no longer needs to run execute()
-	protected boolean isFinished() {
-		// TODO Auto-generated method stub
-		return true;
 	}
 	
 	// Called once after isFinished returns true
 	protected void end() {
+		System.out.println("STOPPED!");
 		Robot.cannon.stop();
 	}
 	
