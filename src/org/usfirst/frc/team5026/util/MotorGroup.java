@@ -124,9 +124,13 @@ public class MotorGroup implements SpeedController {
 
 	@Override
 	public void setInverted(boolean isInverted) {
+		motor1.setInverted(isInverted);
+		for (TalonSRX t: motors) t.setInverted(isInverted);
+	}
+	//@Override
+	public void setSensorInverted(boolean isInverted) {
 		motor1.setSensorPhase(!isInverted);
 	}
-
 	@Override
 	public boolean getInverted() {
 		return motor1.getInverted();

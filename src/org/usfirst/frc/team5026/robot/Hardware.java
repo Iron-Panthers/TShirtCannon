@@ -36,6 +36,8 @@ public class Hardware {
 		
 		left = new MotorGroup(leftM1, leftM2);
 		right = new MotorGroup(rightM1, rightM2);
+		right.setInverted(!true);
+		left.setInverted(!false);
 		
 		cannon = new TalonSRX(RobotMap.CANNON);
 		pdp = new PowerDistributionPanel();
