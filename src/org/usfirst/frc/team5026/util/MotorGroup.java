@@ -15,8 +15,6 @@ public class MotorGroup implements SpeedController {
 	private TalonSRX motor1; 
 	/** Second motor */
 	private TalonSRX motor2;
-	/** Third motor */
-	private TalonSRX motor3;
 	/** Motors in an array */
 	private TalonSRX[] motors;
 
@@ -27,17 +25,14 @@ public class MotorGroup implements SpeedController {
 	 * @param motor2
 	 * @param motor3
 	 */
-	public MotorGroup(TalonSRX motor1, TalonSRX motor2, TalonSRX motor3) {
+	public MotorGroup(TalonSRX motor1, TalonSRX motor2) {
 		this.motor1 = motor1;
 		this.motor2 = motor2;
-		this.motor3 = motor3;
 		motors = new TalonSRX[3];
 		motors[0] = this.motor1;
 		motors[1] = this.motor2;
-		motors[2] = this.motor3;
 		this.motor2.follow(motor1);
-		this.motor3.follow(motor1);
-		setUp(motor1, motor2, motor3);
+		setUp(motor1, motor2);
 	}
 	
 	/**
@@ -129,9 +124,13 @@ public class MotorGroup implements SpeedController {
 
 	@Override
 	public void setInverted(boolean isInverted) {
+		motor1.setInverted(isInverted);
+		for (TalonSRX t: motors) t.setInverted(isInverted);
+	}
+	//@Override
+	public void setSensorInverted(boolean isInverted) {
 		motor1.setSensorPhase(!isInverted);
 	}
-
 	@Override
 	public boolean getInverted() {
 		return motor1.getInverted();

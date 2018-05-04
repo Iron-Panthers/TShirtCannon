@@ -25,4 +25,8 @@ public class RobotMap {
 	public static final int SHOOT_BUTTON = 2;
 	/** Device ID for the cannon TalonSRX */
 	public static final int CANNON = 9;
+	public static final int LEFTM1_PORT = 1;
+	public static final int LEFTM2_PORT = 2;
+	public static final int RIGHTM1_PORT = 4;
+	public static final int RIGHTM2_PORT = 5;
 }
