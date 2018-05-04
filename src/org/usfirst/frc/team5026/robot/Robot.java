@@ -3,7 +3,6 @@ package org.usfirst.frc.team5026.robot;
 
 import org.usfirst.frc.team5026.robot.subsystems.Cannon;
 import org.usfirst.frc.team5026.robot.subsystems.Drive;
-import org.usfirst.frc.team5026.util.MotorType;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
@@ -39,7 +38,6 @@ public class Robot extends IterativeRobot {
 	@Override
 	public void robotInit() {
 		hardware = new Hardware();
-		drive = new Drive(hardware.left, hardware.right, MotorType.TALONSRX);
 		cannon = new Cannon();
 		oi = new OI();
 		oi.mapButtons();
